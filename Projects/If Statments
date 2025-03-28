@@ -1,0 +1,10 @@
+while True: 
+    word = input("What do you think Grandma Likes")
+
+    if "e" in word:
+        print(f"Grandma Likes {word}")
+              
+    else:
+        print(f"Grandma Doesnt like {word}")
+              
+    print("")
