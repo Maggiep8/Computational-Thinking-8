@@ -37,16 +37,19 @@ t4 = create_sprite("bike",x4,y4)
 # # Section 4 - Racing
 # # TODO - set how much each variable changes by and increase the number of repeats to at least 30
 # # TODO - explain here which sprites are faster or slower
-# for i in range(35):
-x1 += 21
-x2 += 50
-x3 += random.randit (8,30)
-x4 += random.randit (9,20)
-t1.goto(x1, y1)
-t2.goto(x2, y2)
-t3.goto(x3, y3)
-t4.goto(x4, y4)
-time.sleep(0.1)
+for i in range(35):
+#Medium
+	x1 += 21
+#Fastest
+	x2 += 50
+#Depends
+	x3 += random.randit (8,30)
+	x4 += random.randit (9,20)
+	t1.goto(x1, y1)
+	t2.goto(x2, y2)
+	t3.goto(x3, y3)
+	t4.goto(x4, y4)
+	time.sleep(0.1)
 
 
 # # Section 5 - Winner

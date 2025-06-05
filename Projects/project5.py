@@ -27,7 +27,7 @@ window.tracer(0)
 # Section 2: Setup
 s1 = create_sprite("fish", 0,0)
 set_background("underwater")
-
+lives = 10
 # TODO - set the starting value for your variable
 
 # Section 3: Controls
@@ -53,12 +53,29 @@ window.onkeypress(move_right,"Right")
 # Section 4: Game Loop
 window.listen()
 timer = 0
+obstacles = []
 while True:
 	time.sleep(0.1)
 	timer += 1  
-	 
+	if timer % 20 == 0:
+		 
     
  	# TODO - code for automatic actions
+		x_position = random.randint (-250, 250)
+		s2 = create_sprite ("jellyfish2",x_position,250)
+		s2.setheading(270)
+		obstacles.append(s2)
+	for s2 in obstacles:
+		s2.forward(10)
+		if get_distance(s1,s2) < 50:
+			lives -= 1
+			s2.hideturtle ()
+			obstacles.remove (s2)
+	# s2 = create_sprite ("jellyfish-removebg-preview")
+	# def move_up():
+	# 	s1.setheading(random.randit (30,80))
+	# 	s1.forward(1000)
+
 
 
 
@@ -67,8 +84,8 @@ while True:
 
 	window.update()
 
-	# if :
-	# 	break
+	if lives == 0:
+		break
 	
 
 print("Game Over")
